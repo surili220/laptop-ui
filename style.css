@@ -75,12 +75,14 @@ nav{
     color:#585772;
 }
 .cover img {
+   /* height :100% Take 100% space of the 60vh alloted in the cover */
     height: 60vh;
     filter: drop-shadow(0px 5px 3px black); /*to add shadow beneath the laptop*/
+    animation: drop 1.5s ease;
 }
 .cover
 {
-  
+    
     flex:1;
 }
 .cta{
@@ -135,4 +137,43 @@ nav{
     justify-content: space-around;
     position: absolute;
     right:20%;
+}
+/*Code for animation*/
+@keyframes drop{
+    0%{
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/*make responsive*/
+
+@media screen and (max-width: 1024px){
+
+    .presentation{
+        flex-direction: column;
+    }
+    .introduction{
+        margin-top: 5vh;
+        text-align: center;
+    }
+    .intro-text h1{
+        font-size: 30px;
+    }
+    .intro-text p{
+        font-size: 18px;
+    }
+    .cta{
+        padding: 10px 0px 0px 0px;
+    }
+    .laptop-select{
+        bottom: 5%;
+        right:50%;
+        width :50%;
+        transform :translate(50%, 5%);
+    }
+    
 }
